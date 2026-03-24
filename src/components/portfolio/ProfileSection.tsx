@@ -25,20 +25,6 @@ const ProfileSection = () => (
           </p>
         </div>
 
-        <div className="md:col-span-1 flex flex-col items-center gap-4">
-          <div className="relative w-[200px] h-[200px]">
-            <div className="absolute -inset-[6px] rounded-full border-2 border-transparent border-t-cyber-cyan border-r-cyber-cyan animate-spin-slow" />
-            <div className="absolute -inset-3 rounded-full border border-transparent border-b-[hsl(var(--cyber-cyan)/0.3)] border-l-[hsl(var(--cyber-cyan)/0.3)] animate-spin-slower" />
-            <div
-              className="w-[200px] h-[200px] rounded-full border-[3px] flex items-center justify-center text-4xl font-bold cyber-glow bg-card"
-              style={{ borderColor: "hsl(var(--cyber-cyan))", boxShadow: "0 0 30px hsl(var(--cyber-cyan) / 0.4), 0 0 60px hsl(var(--cyber-cyan) / 0.15)" }}
-            >
-              WR
-            </div>
-          </div>
-          <div className="font-mono text-[0.7rem] cyber-glow tracking-[0.15em] text-center">// Walter Ramírez</div>
-        </div>
-
         <div className="space-y-4 md:col-span-1">
           <h3 className="font-semibold mb-4 cyber-glow">Experiencia Internacional</h3>
           <ul className="space-y-3">
