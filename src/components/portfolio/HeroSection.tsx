@@ -73,12 +73,12 @@ const HeroSection = () => {
               <div className="absolute -inset-[10px] rounded-full border-[1.5px] border-transparent border-t-[hsl(var(--cyber-cyan)/0.4)] border-r-[hsl(var(--cyber-cyan)/0.4)] animate-spin-slower" />
               <div className="absolute -inset-1 rounded-full border-2 border-transparent border-t-cyber-cyan border-l-cyber-cyan animate-spin-slow" />
               <div className="absolute inset-0 rounded-full" style={{ boxShadow: "0 0 40px hsl(var(--cyber-cyan) / 0.25), 0 0 80px hsl(var(--cyber-cyan) / 0.1)" }} />
-              <div
-                className="w-[220px] h-[220px] rounded-full border-[3px] flex items-center justify-center text-5xl font-bold cyber-glow bg-card relative z-[1]"
+              <img
+                src={profilePhoto}
+                alt="Walter Ramírez"
+                className="w-[220px] h-[220px] rounded-full border-[3px] object-cover relative z-[1]"
                 style={{ borderColor: "hsl(var(--cyber-cyan))", boxShadow: "0 0 30px hsl(var(--cyber-cyan) / 0.5)" }}
-              >
-                WR
-              </div>
+              />
             </div>
             <div className="font-mono text-[0.65rem] cyber-glow tracking-[0.2em]">// WR. MBA · ING. INDUSTRIAL</div>
           </div>
