@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const stats = [
   { number: "30+", label: "Años de Experiencia" },
