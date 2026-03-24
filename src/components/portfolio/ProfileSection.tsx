@@ -15,7 +15,7 @@ const ProfileSection = () => (
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 items-start">
+      <div className="grid md:grid-cols-2 gap-8 items-start">
         <div className="space-y-4 md:col-span-1">
           <p className="text-lg text-foreground">
             Ingeniero Industrial con más de 30 años de experiencia en dirección técnica, gestión industrial, control de calidad y ejecución de proyectos de infraestructura y manufactura, incluyendo contratos gubernamentales internacionales.
