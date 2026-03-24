@@ -15,7 +15,7 @@ const ProfileSection = () => (
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 items-start">
+      <div className="grid md:grid-cols-2 gap-8 items-start">
         <div className="space-y-4 md:col-span-1">
           <p className="text-lg text-foreground">
             Ingeniero Industrial con más de 30 años de experiencia en dirección técnica, gestión industrial, control de calidad y ejecución de proyectos de infraestructura y manufactura, incluyendo contratos gubernamentales internacionales.
@@ -23,20 +23,6 @@ const ProfileSection = () => (
           <p className="text-foreground">
             Especialista en transferencia tecnológica en proyectos de energía e industria, evaluación técnica de contratos públicos, gestión ISO 9000, dirección de planta industrial, innovación productiva para MYPES e implementación de inteligencia artificial en procesos administrativos.
           </p>
-        </div>
-
-        <div className="md:col-span-1 flex flex-col items-center gap-4">
-          <div className="relative w-[200px] h-[200px]">
-            <div className="absolute -inset-[6px] rounded-full border-2 border-transparent border-t-cyber-cyan border-r-cyber-cyan animate-spin-slow" />
-            <div className="absolute -inset-3 rounded-full border border-transparent border-b-[hsl(var(--cyber-cyan)/0.3)] border-l-[hsl(var(--cyber-cyan)/0.3)] animate-spin-slower" />
-            <div
-              className="w-[200px] h-[200px] rounded-full border-[3px] flex items-center justify-center text-4xl font-bold cyber-glow bg-card"
-              style={{ borderColor: "hsl(var(--cyber-cyan))", boxShadow: "0 0 30px hsl(var(--cyber-cyan) / 0.4), 0 0 60px hsl(var(--cyber-cyan) / 0.15)" }}
-            >
-              WR
-            </div>
-          </div>
-          <div className="font-mono text-[0.7rem] cyber-glow tracking-[0.15em] text-center">// Walter Ramírez</div>
         </div>
 
         <div className="space-y-4 md:col-span-1">
