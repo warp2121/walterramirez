@@ -42,7 +42,7 @@ const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
             </div>
             <div className="pl-2.5 ml-5.5" style={{ borderLeft: "1px solid hsl(var(--cyber-cyan) / 0.2)" }}>
               <p className="font-semibold text-foreground mb-2.5">Ing. Ind. Walter Ramírez, <span style={{ color: "#ffb300" }}>MBA (Florida, USA)</span>.</p>
-              <p className="text-muted-foreground mb-2.5">Más de <span className="cyber-glow font-semibold">30 años de experiencia internacional</span> liderando proyectos de infraestructura, manufactura y gestión de contratos en Perú, EE.UU. y China.</p>
+              <p className="text-muted-foreground mb-2.5">Más de <span className="cyber-glow font-semibold">30 años de experiencia internacional</span> dividido en proyectos de infraestructura, diseño, manufactura y gestión de contratos, compras, docencia en Perú, EE.UU. y China.</p>
               <p className="text-muted-foreground">Experto en auditoría <span className="cyber-glow">ISO 9000</span> y aplicación de <span className="cyber-glow">CAD e IA</span> para la eficiencia gubernamental.</p>
             </div>
           </div>
