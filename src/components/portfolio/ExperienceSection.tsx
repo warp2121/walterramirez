@@ -14,7 +14,7 @@ const experiences = [
     ],
   },
   {
-    period: "EE.UU.",
+    period: "2011 — 2012",
     title: "Project Manager – Contratos Gobierno",
     company: "Mechanical Factory O-AVIATION, New Jersey, USA",
     functions: [
