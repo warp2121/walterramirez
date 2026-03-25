@@ -25,7 +25,7 @@ const experiences = [
     ],
   },
   {
-    period: "USA",
+    period: "2012 — 2014",
     title: "Director de Operaciones",
     company: "MAJESTIC Industry – NJ, USA",
     functions: [
