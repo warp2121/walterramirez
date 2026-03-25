@@ -36,6 +36,27 @@ const experiences = [
     ],
   },
   {
+    period: "2017 — 2018",
+    title: "Consultor de Ingeniería",
+    company: "Freelance, Nueva York, EE. UU.",
+    functions: [
+      "Asistencia en proyectos de invenciones domésticas",
+      "Planos de ingeniería para fabricación en el mercado estadounidense y chino",
+      "Apoyo en adquisiciones para encontrar proveedores a nivel mundial",
+    ],
+  },
+  {
+    period: "2014 — 2018",
+    title: "Asistente de Ingeniería / Programador CNC",
+    company: "Millwork NARVA – Springfield, NJ, EE. UU.",
+    functions: [
+      "Diseño de más de 100 paneles 3D para postprocesamiento en G-code con Biese Rover y Holzher Linx",
+      "Desarrollo de nuevos productos como paneles de pared 3D, pantallas y esculturas en alto relieve utilizando Aspire",
+      "Dibujo de gabinetes en formatos SolidWorks y AutoCAD para fabricación",
+      "Elaboración de planos de taller (shop drawings)",
+    ],
+  },
+  {
     period: "1999 — 2009",
     title: "Jefe CAD / ISO 9000 Auditor",
     company: "LAHMEYER WATER & ENERGY, Lima, Perú",
