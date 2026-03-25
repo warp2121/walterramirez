@@ -26,7 +26,7 @@ const experiences = [
   },
   {
     period: "2012 — 2014",
-    title: "Director de Operaciones",
+    title: "Jefe de Planta",
     company: "MAJESTIC Industry – NJ, USA",
     functions: [
       "Dirección de planta industrial",
