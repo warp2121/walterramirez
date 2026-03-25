@@ -14,28 +14,6 @@ const experiences = [
     ],
   },
   {
-    period: "2011 — 2012",
-    title: "Project Manager – Contratos Gobierno",
-    company: "Mechanical Factory O-AVIATION, New Jersey, USA",
-    functions: [
-      "Supervisión de cumplimiento contractual",
-      "Coordinación de equipos técnicos",
-      "Control de estándares ISO",
-      "Gestión de calidad bajo especificaciones militares",
-    ],
-  },
-  {
-    period: "2012 — 2014",
-    title: "Jefe de Planta",
-    company: "MAJESTIC Industry – NJ, USA",
-    functions: [
-      "Dirección de planta industrial",
-      "Gestión de personal",
-      "Diseño de layout industrial",
-      "Control de calidad y mejora de procesos",
-    ],
-  },
-  {
     period: "2017 — 2018",
     title: "Consultor de Ingeniería",
     company: "Freelance, Nueva York, EE. UU.",
@@ -54,6 +32,28 @@ const experiences = [
       "Desarrollo de nuevos productos como paneles de pared 3D, pantallas y esculturas en alto relieve utilizando Aspire",
       "Dibujo de gabinetes en formatos SolidWorks y AutoCAD para fabricación",
       "Elaboración de planos de taller (shop drawings)",
+    ],
+  },
+  {
+    period: "2012 — 2014",
+    title: "Jefe de Planta",
+    company: "MAJESTIC Industry – NJ, USA",
+    functions: [
+      "Dirección de planta industrial",
+      "Gestión de personal",
+      "Diseño de layout industrial",
+      "Control de calidad y mejora de procesos",
+    ],
+  },
+  {
+    period: "2011 — 2012",
+    title: "Project Manager – Contratos Gobierno",
+    company: "Mechanical Factory O-AVIATION, New Jersey, USA",
+    functions: [
+      "Supervisión de cumplimiento contractual",
+      "Coordinación de equipos técnicos",
+      "Control de estándares ISO",
+      "Gestión de calidad bajo especificaciones militares",
     ],
   },
   {
