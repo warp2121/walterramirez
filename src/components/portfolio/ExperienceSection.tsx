@@ -37,7 +37,7 @@ const experiences = [
   },
   {
     period: "1999 — 2009",
-    title: "Jefe de Producción / Director Técnico",
+    title: "Jefe CAD / ISO 9000 Auditor",
     company: "LAHMEYER WATER & ENERGY, Lima, Perú",
     functions: [
       "Coordinación multidisciplinaria en proyectos hidroenergéticos",
