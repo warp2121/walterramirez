@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 const experiences = [
   {
-    period: "2020 — 2023",
+    period: "2020 — 2025",
     title: "CEO – Ozonomach",
     company: "Lima, Perú | Cargo de Dirección Ejecutiva",
     functions: [
