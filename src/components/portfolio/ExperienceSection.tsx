@@ -15,7 +15,7 @@ const experiences = [
   },
   {
     period: "2018 — 2019",
-    title: "Profesor de Inglés en Escuelas",
+    title: "Docente en Escuelas en China",
     company: "Younuvo Jilin Educational Experts – Changchun, China",
     functions: [
       "Profesor de inglés y cultura occidental en seis escuelas y universidad, con 25 horas de clases semanales para aproximadamente 1,000 alumnos durante 1 año",
