@@ -47,7 +47,7 @@ const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
           </button>
         </div>
 
-        <div className="rounded-2xl p-10 relative overflow-hidden" style={{ background: "#06090f", border: "1px solid hsl(var(--cyber-cyan) / 0.2)" }}>
+        <div ref={contentRef} className="rounded-2xl p-10 relative overflow-hidden" style={{ background: "#06090f", border: "1px solid hsl(var(--cyber-cyan) / 0.2)" }}>
           <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--cyber-cyan)), transparent)", opacity: 0.8 }} />
 
           <div className="text-center mb-9">
