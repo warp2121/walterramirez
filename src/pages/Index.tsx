@@ -43,7 +43,7 @@ const Index = () => {
         }}
       />
 
-      <Navbar onOpenLeyesTech={() => setLeyesTechOpen(true)} />
+      <Navbar onOpenLeyesTech={openLeyesTech} />
       <HeroSection />
       <ProfileSection />
       <ExperienceSection />
@@ -53,7 +53,7 @@ const Index = () => {
       <EducationSection />
       <ContactSection />
       <Footer />
-      <LeyesTechModal open={leyesTechOpen} onClose={() => setLeyesTechOpen(false)} />
+      <LeyesTechModal open={leyesTechOpen} onClose={closeLeyesTech} />
     </>
   );
 };
