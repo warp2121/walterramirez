@@ -75,7 +75,7 @@ const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
               ].map((law) => (
                 <div key={law.title} className="p-2.5 rounded" style={{ background: `${law.color}10`, borderLeft: `2px solid ${law.color}` }}>
                   <p className="font-semibold mb-1" style={{ color: law.color }}>{law.title}</p>
-                  <p className="text-muted-foreground text-sm">{law.desc}</p>
+                  <p className="text-foreground text-sm">{law.desc}</p>
                 </div>
               ))}
             </div>
