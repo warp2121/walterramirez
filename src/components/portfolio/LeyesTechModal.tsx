@@ -30,7 +30,14 @@ const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div className="max-w-[820px] mx-auto py-8 px-4">
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end gap-3 mb-4">
+          <button
+            onClick={handleDownload}
+            className="bg-transparent border px-5 py-2 rounded-md cursor-pointer font-mono text-xs tracking-widest transition-all hover:bg-[hsl(var(--cyber-cyan)/0.15)]"
+            style={{ borderColor: "hsl(var(--cyber-cyan))", color: "hsl(var(--cyber-cyan))" }}
+          >
+            ⬇ DESCARGAR PNG
+          </button>
           <button
             onClick={onClose}
             className="bg-transparent border px-5 py-2 rounded-md cursor-pointer font-mono text-xs tracking-widest transition-all hover:bg-[hsl(var(--cyber-cyan)/0.15)]"
