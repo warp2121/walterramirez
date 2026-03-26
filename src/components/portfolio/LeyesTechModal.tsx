@@ -1,9 +1,26 @@
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+
 interface LeyesTechModalProps {
   open: boolean;
   onClose: () => void;
 }
 
 const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = async () => {
+    if (!contentRef.current) return;
+    const canvas = await html2canvas(contentRef.current, {
+      backgroundColor: "#06090f",
+      scale: 2,
+    });
+    const link = document.createElement("a");
+    link.download = "Leyes-Tech-Agenda.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  };
+
   if (!open) return null;
 
   return (
