@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "@/components/portfolio/Navbar";
 import HeroSection from "@/components/portfolio/HeroSection";
 import ProfileSection from "@/components/portfolio/ProfileSection";
@@ -12,7 +13,16 @@ import Footer from "@/components/portfolio/Footer";
 import LeyesTechModal from "@/components/portfolio/LeyesTechModal";
 
 const Index = () => {
-  const [leyesTechOpen, setLeyesTechOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [leyesTechOpen, setLeyesTechOpen] = useState(location.pathname === "/leyes-tech");
+
+  useEffect(() => {
+    setLeyesTechOpen(location.pathname === "/leyes-tech");
+  }, [location.pathname]);
+
+  const openLeyesTech = () => navigate("/leyes-tech");
+  const closeLeyesTech = () => navigate("/");
 
   return (
     <>
@@ -33,7 +43,7 @@ const Index = () => {
         }}
       />
 
-      <Navbar onOpenLeyesTech={() => setLeyesTechOpen(true)} />
+      <Navbar onOpenLeyesTech={openLeyesTech} />
       <HeroSection />
       <ProfileSection />
       <ExperienceSection />
@@ -43,7 +53,7 @@ const Index = () => {
       <EducationSection />
       <ContactSection />
       <Footer />
-      <LeyesTechModal open={leyesTechOpen} onClose={() => setLeyesTechOpen(false)} />
+      <LeyesTechModal open={leyesTechOpen} onClose={closeLeyesTech} />
     </>
   );
 };
