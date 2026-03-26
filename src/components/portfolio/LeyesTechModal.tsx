@@ -1,9 +1,26 @@
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+
 interface LeyesTechModalProps {
   open: boolean;
   onClose: () => void;
 }
 
 const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = async () => {
+    if (!contentRef.current) return;
+    const canvas = await html2canvas(contentRef.current, {
+      backgroundColor: "#06090f",
+      scale: 2,
+    });
+    const link = document.createElement("a");
+    link.download = "Leyes-Tech-Agenda.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  };
+
   if (!open) return null;
 
   return (
@@ -13,7 +30,14 @@ const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div className="max-w-[820px] mx-auto py-8 px-4">
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end gap-3 mb-4">
+          <button
+            onClick={handleDownload}
+            className="bg-transparent border px-5 py-2 rounded-md cursor-pointer font-mono text-xs tracking-widest transition-all hover:bg-[hsl(var(--cyber-cyan)/0.15)]"
+            style={{ borderColor: "hsl(var(--cyber-cyan))", color: "hsl(var(--cyber-cyan))" }}
+          >
+            ⬇ DESCARGAR PNG
+          </button>
           <button
             onClick={onClose}
             className="bg-transparent border px-5 py-2 rounded-md cursor-pointer font-mono text-xs tracking-widest transition-all hover:bg-[hsl(var(--cyber-cyan)/0.15)]"
@@ -23,7 +47,7 @@ const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
           </button>
         </div>
 
-        <div className="rounded-2xl p-10 relative overflow-hidden" style={{ background: "#06090f", border: "1px solid hsl(var(--cyber-cyan) / 0.2)" }}>
+        <div ref={contentRef} className="rounded-2xl p-10 relative overflow-hidden" style={{ background: "#06090f", border: "1px solid hsl(var(--cyber-cyan) / 0.2)" }}>
           <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--cyber-cyan)), transparent)", opacity: 0.8 }} />
 
           <div className="text-center mb-9">
