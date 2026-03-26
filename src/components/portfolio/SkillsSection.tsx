@@ -9,6 +9,7 @@ const skills = [
       { label: "ChatGPT" }, { label: "Copilot" }, { label: "Gemini" }, { label: "Claude" },
       { label: "Lovable", featured: true }, { label: "Prompt Builder", featured: true },
       { label: "NoteBookLM" }, { label: "Flux" }, { label: "Make" }, { label: "Kimi" },
+      { label: "Antigravity" }, { label: "Github" }, { label: "Grok" }, { label: "Cowork" }, { label: "Prompt Design" },
     ],
   },
   {
