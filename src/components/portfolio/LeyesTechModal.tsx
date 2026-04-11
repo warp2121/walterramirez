@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import html2canvas from "html2canvas";
+import { Document, Packer, Paragraph, TextRun, AlignmentType } from "docx";
+import { saveAs } from "file-saver";
 
 interface LeyesTechModalProps {
   open: boolean;
