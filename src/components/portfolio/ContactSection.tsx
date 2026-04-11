@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Mail, Phone, Linkedin, Download } from "lucide-react";
+import { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel } from "docx";
+import { saveAs } from "file-saver";
 
 const ContactSection = () => {
   const ref = useRef<HTMLDivElement>(null);
