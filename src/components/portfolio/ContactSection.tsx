@@ -71,32 +71,109 @@ const ContactSection = () => {
             </a>
             <button
               onClick={async () => {
+                const experiences = [
+                  { period: "2020 — 2025", title: "CEO – Ozonomach", company: "Lima, Perú | Cargo de Dirección Ejecutiva", functions: ["Dirección estratégica empresarial", "Gestión de innovación y desarrollo de producto", "Toma de decisiones financieras y operativas", "Implementación de automatización con IA", "Gestión de compras internacionales"] },
+                  { period: "2018 — 2019", title: "Docente en Escuelas en China", company: "Younuvo Jilin Educational Experts – Changchun, China", functions: ["Profesor de inglés y cultura occidental en seis escuelas y universidad, con 25 horas de clases semanales para aproximadamente 1,000 alumnos durante 1 año"] },
+                  { period: "2017 — 2018", title: "Consultor de Ingeniería", company: "Freelance, Nueva York, EE. UU.", functions: ["Asistencia en proyectos de invenciones domésticas", "Planos de ingeniería para fabricación en el mercado estadounidense y chino", "Apoyo en adquisiciones para encontrar proveedores a nivel mundial"] },
+                  { period: "2014 — 2018", title: "Asistente de Ingeniería / Programador CNC", company: "Millwork NARVA – Springfield, NJ, EE. UU.", functions: ["Diseño de más de 100 paneles 3D para postprocesamiento en G-code con Biese Rover y Holzher Linx", "Desarrollo de nuevos productos como paneles de pared 3D, pantallas y esculturas en alto relieve utilizando Aspire", "Dibujo de gabinetes en formatos SolidWorks y AutoCAD para fabricación", "Elaboración de planos de taller (shop drawings)"] },
+                  { period: "2012 — 2014", title: "Jefe de Planta", company: "MAJESTIC Industry – NJ, USA", functions: ["Dirección de planta industrial", "Gestión de personal", "Diseño de layout industrial", "Control de calidad y mejora de procesos"] },
+                  { period: "2011 — 2012", title: "Project Manager – Contratos Gobierno", company: "Mechanical Factory O-AVIATION, New Jersey, USA", functions: ["Supervisión de cumplimiento contractual", "Coordinación de equipos técnicos", "Control de estándares ISO", "Gestión de calidad bajo especificaciones militares"] },
+                  { period: "1999 — 2009", title: "Jefe CAD / ISO 9000 Auditor", company: "LAHMEYER WATER & ENERGY, Lima, Perú", functions: ["Coordinación multidisciplinaria en proyectos hidroenergéticos", "Gestión documental técnica", "Supervisión de estándares de calidad", "Implementación de base de datos técnica"] },
+                ];
+
+                const skillCategories = [
+                  { title: "Inteligencia Artificial", tags: "ChatGPT, Copilot, Gemini, Claude, Lovable, Prompt Builder, NoteBookLM, Flux, Make, Kimi, Antigravity, Github, Grok, Cowork, Prompt Design" },
+                  { title: "Diseño & CAD", tags: "AutoCAD Expert, SolidWorks, Wix, UX Design" },
+                  { title: "Gestión Industrial", tags: "U2 Software ERP, ISO 9000, CNC Software, Vectric" },
+                  { title: "Comercio Internacional", tags: "MFG.COM, Alibaba, Procurement, Logistics" },
+                  { title: "Competencias Directivas", tags: "Articulación Universidad-Empresa, Innovación Productiva, Evaluación de Contratos, Modernización con IA" },
+                  { title: "Software & Tools", tags: "MS Office, CNC Center, GPT for Coding" },
+                ];
+
+                const websites = [
+                  { title: "Ozonomach", url: "www.ozonomach.com" },
+                  { title: "Rank Peru", url: "www.rankperu.com" },
+                  { title: "Macro Number", url: "www.macronumber.com" },
+                  { title: "Gestión Proyectos", url: "www.gestionproyectos.com" },
+                ];
+
+                const books = [
+                  { title: "IA: la llave de un desarrollo postergado", subtitle: "Una visión transformadora para América Latina", description: "Explora cómo la inteligencia artificial puede ser el catalizador que América Latina necesita para cerrar brechas históricas de desarrollo, modernizar sus estructuras productivas y competir en la economía global del siglo XXI." },
+                  { title: "China, el universo que está enseñando a Occidente", subtitle: "Lecciones de una civilización milenaria", description: "Un análisis profundo sobre las lecciones que el modelo de desarrollo chino ofrece a Occidente, desde su enfoque en la planificación estratégica de largo plazo hasta su integración de tecnología y tradición en la construcción de una superpotencia moderna." },
+                ];
+
+                const children: InstanceType<typeof Paragraph>[] = [];
+
+                // Header
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_1, alignment: AlignmentType.CENTER, children: [new TextRun({ text: "WALTER RAMÍREZ", bold: true, size: 36, font: "Arial" })] }));
+                children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 }, children: [new TextRun({ text: "MBA — Ingeniero Industrial", size: 24, color: "555555" })] }));
+                children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 }, children: [new TextRun({ text: "Transferencia Tecnológica & Modernización Productiva con IA", size: 20, color: "666666", italics: true })] }));
+                children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 400 }, children: [new TextRun({ text: "Lima, Perú | ramirezw2010@gmail.com | +51 958 188 762 | linkedin.com/in/walter-ramirez", size: 20, color: "666666" })] }));
+
+                // Perfil
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 300, after: 200 }, children: [new TextRun({ text: "PERFIL PROFESIONAL", bold: true, size: 26 })] }));
+                children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "Ingeniero Industrial con más de 30 años de experiencia en dirección técnica, gestión industrial, control de calidad y ejecución de proyectos de infraestructura y manufactura, incluyendo contratos gubernamentales internacionales.", size: 22 })] }));
+                children.push(new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "Especialista en transferencia tecnológica en proyectos de energía e industria, evaluación técnica de contratos públicos, gestión ISO 9000, dirección de planta industrial, innovación productiva para MYPES e implementación de inteligencia artificial en procesos administrativos.", size: 22 })] }));
+                children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "Experiencia Internacional:", bold: true, size: 22 })] }));
+                ["Proyectos hidroenergéticos en Perú", "Manufactura industrial en EE.UU.", "Gestión de producción y calidad", "Consultoría técnica internacional"].forEach(h => {
+                  children.push(new Paragraph({ spacing: { after: 60 }, indent: { left: 360 }, children: [new TextRun({ text: `• ${h}`, size: 22 })] }));
+                });
+
+                // Experiencia
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: "EXPERIENCIA PROFESIONAL", bold: true, size: 26 })] }));
+                experiences.forEach(exp => {
+                  children.push(new Paragraph({ spacing: { before: 200, after: 60 }, children: [new TextRun({ text: `${exp.title}`, bold: true, size: 24 })] }));
+                  children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: exp.company, size: 20, italics: true, color: "555555" })] }));
+                  children.push(new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: exp.period, size: 20, color: "666666" })] }));
+                  exp.functions.forEach(fn => {
+                    children.push(new Paragraph({ spacing: { after: 40 }, indent: { left: 360 }, children: [new TextRun({ text: `• ${fn}`, size: 22 })] }));
+                  });
+                });
+
+                // Habilidades
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: "HABILIDADES TÉCNICAS", bold: true, size: 26 })] }));
+                skillCategories.forEach(cat => {
+                  children.push(new Paragraph({ spacing: { before: 100, after: 60 }, children: [new TextRun({ text: cat.title, bold: true, size: 22 })] }));
+                  children.push(new Paragraph({ spacing: { after: 80 }, indent: { left: 360 }, children: [new TextRun({ text: cat.tags, size: 20, color: "444444" })] }));
+                });
+
+                // Websites
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: "SITIOS WEB PROPIOS", bold: true, size: 26 })] }));
+                websites.forEach(site => {
+                  children.push(new Paragraph({ spacing: { after: 60 }, indent: { left: 360 }, children: [new TextRun({ text: `• ${site.title} — ${site.url}`, size: 22 })] }));
+                });
+
+                // Libros
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: "PROYECTOS DE LIBROS", bold: true, size: 26 })] }));
+                books.forEach(book => {
+                  children.push(new Paragraph({ spacing: { before: 100, after: 60 }, children: [new TextRun({ text: book.title, bold: true, size: 22 })] }));
+                  children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: book.subtitle, size: 20, italics: true, color: "555555" })] }));
+                  children.push(new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: book.description, size: 20 })] }));
+                });
+
+                // Educación
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: "EDUCACIÓN", bold: true, size: 26 })] }));
+                children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: "MBA — Master of Business Administration", bold: true, size: 22 })] }));
+                children.push(new Paragraph({ spacing: { after: 120 }, indent: { left: 360 }, children: [new TextRun({ text: "Webber International University, Florida, USA", size: 20, color: "555555" })] }));
+                children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: "Ingeniero Industrial", bold: true, size: 22 })] }));
+                children.push(new Paragraph({ spacing: { after: 120 }, indent: { left: 360 }, children: [new TextRun({ text: "Universidad Inca Garcilaso de la Vega, Perú", size: 20, color: "555555" })] }));
+
+                // Idiomas
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: "IDIOMAS", bold: true, size: 26 })] }));
+                [{ name: "Español", level: "Nativo" }, { name: "English", level: "Avanzado" }, { name: "Chinese", level: "En progreso" }, { name: "German", level: "En progreso" }].forEach(lang => {
+                  children.push(new Paragraph({ spacing: { after: 60 }, indent: { left: 360 }, children: [new TextRun({ text: `• ${lang.name} — ${lang.level}`, size: 22 })] }));
+                });
+
+                // Contacto
+                children.push(new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: "CONTACTO", bold: true, size: 26 })] }));
+                children.push(new Paragraph({ spacing: { after: 60 }, indent: { left: 360 }, children: [new TextRun({ text: "• Email: ramirezw2010@gmail.com", size: 22 })] }));
+                children.push(new Paragraph({ spacing: { after: 60 }, indent: { left: 360 }, children: [new TextRun({ text: "• Teléfono: +51 958 188 762", size: 22 })] }));
+                children.push(new Paragraph({ spacing: { after: 60 }, indent: { left: 360 }, children: [new TextRun({ text: "• LinkedIn: linkedin.com/in/walter-ramirez", size: 22 })] }));
+                children.push(new Paragraph({ spacing: { after: 200 }, alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Lima, Perú — Disponible para proyectos remotos e internacionales", size: 20, italics: true, color: "666666" })] }));
+
                 const doc = new Document({
-                  styles: {
-                    default: { document: { run: { font: "Arial", size: 22 } } },
-                  },
-                  sections: [{
-                    children: [
-                      new Paragraph({ heading: HeadingLevel.HEADING_1, alignment: AlignmentType.CENTER, children: [new TextRun({ text: "WALTER RAMÍREZ", bold: true, size: 36, font: "Arial" })] }),
-                      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [new TextRun({ text: "MBA — Ingeniero Industrial", size: 24, color: "555555" })] }),
-                      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 400 }, children: [
-                        new TextRun({ text: "Lima, Perú | ramirezw2010@gmail.com | +51 958 188 762 | linkedin.com/in/walter-ramirez", size: 20, color: "666666" }),
-                      ]}),
-                      new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 300, after: 200 }, children: [new TextRun({ text: "PERFIL PROFESIONAL", bold: true, size: 26 })] }),
-                      new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: "Más de 30 años de experiencia internacional en proyectos de infraestructura, diseño, manufactura, gestión de contratos, compras y docencia (Perú, EE.UU. y China). Especializado en auditoría ISO 9000, transferencia tecnológica, modernización productiva con IA y gestión de proyectos internacionales.", size: 22 })] }),
-                      new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 300, after: 200 }, children: [new TextRun({ text: "EXPERIENCIA PROFESIONAL", bold: true, size: 26 })] }),
-                      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "Consultor en Transferencia Tecnológica & Modernización Productiva con IA", bold: true, size: 22 })] }),
-                      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "Diseñador Mecánico — Proyectos de infraestructura en EE.UU.", bold: true, size: 22 })] }),
-                      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "Auditor ISO 9000 — Control de calidad y procesos", bold: true, size: 22 })] }),
-                      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "Docente en Escuelas en China — Enseñanza internacional", bold: true, size: 22 })] }),
-                      new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: "Gestión de Contratos y Compras — Proyectos internacionales", bold: true, size: 22 })] }),
-                      new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 300, after: 200 }, children: [new TextRun({ text: "EDUCACIÓN", bold: true, size: 26 })] }),
-                      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "MBA — Maestría en Administración de Empresas", size: 22 })] }),
-                      new Paragraph({ spacing: { after: 300 }, children: [new TextRun({ text: "Ingeniería Industrial — Universidad Nacional", size: 22 })] }),
-                      new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 300, after: 200 }, children: [new TextRun({ text: "HABILIDADES CLAVE", bold: true, size: 26 })] }),
-                      new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "• Transferencia Tecnológica  • CAD/Diseño Mecánico  • Auditoría ISO 9000  • Inteligencia Artificial  • Gestión de Proyectos  • Idiomas: Español, Inglés, Mandarín", size: 22 })] }),
-                    ]
-                  }]
+                  styles: { default: { document: { run: { font: "Arial", size: 22 } } } },
+                  sections: [{ children }],
                 });
                 const blob = await Packer.toBlob(doc);
                 saveAs(blob, "Walter-Ramirez-CV.docx");
