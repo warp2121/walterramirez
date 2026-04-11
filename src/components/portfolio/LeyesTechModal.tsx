@@ -162,6 +162,13 @@ const LeyesTechModal = ({ open, onClose }: LeyesTechModalProps) => {
             ⬇ DESCARGAR PNG
           </button>
           <button
+            onClick={handleDownloadDoc}
+            className="bg-transparent border px-5 py-2 rounded-md cursor-pointer font-mono text-xs tracking-widest transition-all hover:bg-[hsl(var(--cyber-cyan)/0.15)]"
+            style={{ borderColor: "hsl(var(--cyber-cyan))", color: "hsl(var(--cyber-cyan))" }}
+          >
+            ⬇ DESCARGAR DOC
+          </button>
+          <button
             onClick={onClose}
             className="bg-transparent border px-5 py-2 rounded-md cursor-pointer font-mono text-xs tracking-widest transition-all hover:bg-[hsl(var(--cyber-cyan)/0.15)]"
             style={{ borderColor: "hsl(var(--cyber-cyan))", color: "hsl(var(--cyber-cyan))" }}
