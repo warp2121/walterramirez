@@ -1,19 +1,21 @@
 import { useEffect, useRef } from "react";
-
-const education = [
-  { tag: "MBA", degree: "Master of Business Administration", school: "Webber International University, Florida, USA" },
-  { tag: "INGENIERÍA", degree: "Ingeniero Industrial", school: "Universidad Inca Garcilaso de la Vega, Perú" },
-];
-
-const languages = [
-  { name: "Español", level: "Nativo" },
-  { name: "English", level: "Avanzado" },
-  { name: "Chinese", level: "En progreso" },
-  { name: "German", level: "En progreso" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const EducationSection = () => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
+
+  const education = [
+    { tag: t("edu.mba.tag"), degree: t("edu.mba.degree"), school: t("edu.mba.school") },
+    { tag: t("edu.eng.tag"), degree: t("edu.eng.degree"), school: t("edu.eng.school") },
+  ];
+
+  const languages = [
+    { name: t("edu.lang.es"), level: t("edu.lang.es.level") },
+    { name: t("edu.lang.en"), level: t("edu.lang.en.level") },
+    { name: t("edu.lang.zh"), level: t("edu.lang.zh.level") },
+    { name: t("edu.lang.de"), level: t("edu.lang.de.level") },
+  ];
 
   useEffect(() => {
     if (!ref.current) return;
@@ -37,9 +39,9 @@ const EducationSection = () => {
     <section id="formacion" className="py-24 px-8 relative z-[1] bg-bg-secondary">
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className="mb-12">
-          <div className="section-number mb-2">06 // FORMACIÓN</div>
+          <div className="section-number mb-2">{t("edu.section")}</div>
           <h2 className="text-foreground font-semibold tracking-tight" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
-            Educación & Idiomas
+            {t("edu.title")}
           </h2>
         </div>
 

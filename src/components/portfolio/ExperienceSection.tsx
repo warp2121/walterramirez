@@ -1,84 +1,19 @@
 import { useEffect, useRef } from "react";
-
-const experiences = [
-  {
-    period: "2020 — 2025",
-    title: "CEO – Ozonomach",
-    company: "Lima, Perú | Cargo de Dirección Ejecutiva",
-    functions: [
-      "Dirección estratégica empresarial",
-      "Gestión de innovación y desarrollo de producto",
-      "Toma de decisiones financieras y operativas",
-      "Implementación de automatización con IA",
-      "Gestión de compras internacionales",
-    ],
-  },
-  {
-    period: "2018 — 2019",
-    title: "Docente en Escuelas en China",
-    company: "Younuvo Jilin Educational Experts – Changchun, China",
-    functions: [
-      "Profesor de inglés y cultura occidental en seis escuelas y universidad, con 25 horas de clases semanales para aproximadamente 1,000 alumnos durante 1 año",
-    ],
-  },
-  {
-    period: "2017 — 2018",
-    title: "Consultor de Ingeniería",
-    company: "Freelance, Nueva York, EE. UU.",
-    functions: [
-      "Asistencia en proyectos de invenciones domésticas",
-      "Planos de ingeniería para fabricación en el mercado estadounidense y chino",
-      "Apoyo en adquisiciones para encontrar proveedores a nivel mundial",
-    ],
-  },
-  {
-    period: "2014 — 2018",
-    title: "Asistente de Ingeniería / Programador CNC",
-    company: "Millwork NARVA – Springfield, NJ, EE. UU.",
-    functions: [
-      "Diseño de más de 100 paneles 3D para postprocesamiento en G-code con Biese Rover y Holzher Linx",
-      "Desarrollo de nuevos productos como paneles de pared 3D, pantallas y esculturas en alto relieve utilizando Aspire",
-      "Dibujo de gabinetes en formatos SolidWorks y AutoCAD para fabricación",
-      "Elaboración de planos de taller (shop drawings)",
-    ],
-  },
-  {
-    period: "2012 — 2014",
-    title: "Jefe de Planta",
-    company: "MAJESTIC Industry – NJ, USA",
-    functions: [
-      "Dirección de planta industrial",
-      "Gestión de personal",
-      "Diseño de layout industrial",
-      "Control de calidad y mejora de procesos",
-    ],
-  },
-  {
-    period: "2011 — 2012",
-    title: "Project Manager – Contratos Gobierno",
-    company: "Mechanical Factory O-AVIATION, New Jersey, USA",
-    functions: [
-      "Supervisión de cumplimiento contractual",
-      "Coordinación de equipos técnicos",
-      "Control de estándares ISO",
-      "Gestión de calidad bajo especificaciones militares",
-    ],
-  },
-  {
-    period: "1999 — 2009",
-    title: "Jefe CAD / ISO 9000 Auditor",
-    company: "LAHMEYER WATER & ENERGY, Lima, Perú",
-    functions: [
-      "Coordinación multidisciplinaria en proyectos hidroenergéticos",
-      "Gestión documental técnica",
-      "Supervisión de estándares de calidad",
-      "Implementación de base de datos técnica",
-    ],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ExperienceSection = () => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
+
+  const experiences = [
+    { period: "2020 — 2025", title: t("exp.1.title"), company: t("exp.1.company"), functions: [t("exp.1.f1"), t("exp.1.f2"), t("exp.1.f3"), t("exp.1.f4"), t("exp.1.f5")] },
+    { period: "2018 — 2019", title: t("exp.2.title"), company: t("exp.2.company"), functions: [t("exp.2.f1")] },
+    { period: "2017 — 2018", title: t("exp.3.title"), company: t("exp.3.company"), functions: [t("exp.3.f1"), t("exp.3.f2"), t("exp.3.f3")] },
+    { period: "2014 — 2018", title: t("exp.4.title"), company: t("exp.4.company"), functions: [t("exp.4.f1"), t("exp.4.f2"), t("exp.4.f3"), t("exp.4.f4")] },
+    { period: "2012 — 2014", title: t("exp.5.title"), company: t("exp.5.company"), functions: [t("exp.5.f1"), t("exp.5.f2"), t("exp.5.f3"), t("exp.5.f4")] },
+    { period: "2011 — 2012", title: t("exp.6.title"), company: t("exp.6.company"), functions: [t("exp.6.f1"), t("exp.6.f2"), t("exp.6.f3"), t("exp.6.f4")] },
+    { period: "1999 — 2009", title: t("exp.7.title"), company: t("exp.7.company"), functions: [t("exp.7.f1"), t("exp.7.f2"), t("exp.7.f3"), t("exp.7.f4")] },
+  ];
 
   useEffect(() => {
     if (!ref.current) return;
@@ -102,9 +37,9 @@ const ExperienceSection = () => {
     <section id="experiencia" className="py-24 px-8 relative z-[1] bg-bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
-          <div className="section-number mb-2">02 // EXPERIENCIA</div>
+          <div className="section-number mb-2">{t("exp.section")}</div>
           <h2 className="text-foreground font-semibold tracking-tight" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
-            Trayectoria Profesional
+            {t("exp.title")}
           </h2>
         </div>
 
@@ -116,7 +51,7 @@ const ExperienceSection = () => {
 
           {experiences.map((exp) => (
             <div
-              key={exp.title}
+              key={exp.period}
               className="timeline-item relative pb-12 opacity-0 translate-y-8 transition-all duration-600"
               style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
             >

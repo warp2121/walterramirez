@@ -1,27 +1,29 @@
 import { useEffect, useRef } from "react";
 import { Layers, Globe, BookOpen } from "lucide-react";
-
-const books = [
-  {
-    icon: Layers,
-    coverTitle: "Inteligencia Artificial",
-    title: "IA: la llave de un desarrollo postergado",
-    subtitle: "Una visión transformadora para América Latina",
-    description: "Explora cómo la inteligencia artificial puede ser el catalizador que América Latina necesita para cerrar brechas históricas de desarrollo, modernizar sus estructuras productivas y competir en la economía global del siglo XXI.",
-    tags: ["Inteligencia Artificial", "Desarrollo"],
-  },
-  {
-    icon: Globe,
-    coverTitle: "Geopolítica Global",
-    title: "China, el universo que está enseñando a Occidente",
-    subtitle: "Lecciones de una civilización milenaria",
-    description: "Un análisis profundo sobre las lecciones que el modelo de desarrollo chino ofrece a Occidente, desde su enfoque en la planificación estratégica de largo plazo hasta su integración de tecnología y tradición en la construcción de una superpotencia moderna.",
-    tags: ["China", "Occidente"],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BooksSection = () => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
+
+  const books = [
+    {
+      icon: Layers,
+      coverTitle: t("books.1.cover"),
+      title: t("books.1.title"),
+      subtitle: t("books.1.subtitle"),
+      description: t("books.1.desc"),
+      tags: [t("books.1.tag1"), t("books.1.tag2")],
+    },
+    {
+      icon: Globe,
+      coverTitle: t("books.2.cover"),
+      title: t("books.2.title"),
+      subtitle: t("books.2.subtitle"),
+      description: t("books.2.desc"),
+      tags: [t("books.2.tag1"), t("books.2.tag2")],
+    },
+  ];
 
   useEffect(() => {
     if (!ref.current) return;
@@ -47,9 +49,9 @@ const BooksSection = () => {
     <section id="libros" className="py-24 px-8 relative z-[1]" style={{ background: "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--cyber-cyan) / 0.03) 50%, hsl(var(--background)) 100%)" }}>
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
-          <div className="section-number mb-2">05 // PUBLICACIONES</div>
+          <div className="section-number mb-2">{t("books.section")}</div>
           <h2 className="text-foreground font-semibold tracking-tight" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
-            Proyectos de Libros
+            {t("books.title")}
           </h2>
         </div>
 
@@ -61,7 +63,6 @@ const BooksSection = () => {
               style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
             >
               <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--cyber-cyan)), transparent)", opacity: 0.7 }} />
-
               <div
                 className="w-full h-[200px] rounded-xl flex flex-col items-center justify-center mb-6 relative overflow-hidden"
                 style={{ background: "linear-gradient(135deg, hsl(var(--cyber-cyan) / 0.15) 0%, hsl(200, 50%, 30% / 0.2) 100%)", border: "1px solid hsl(var(--cyber-cyan) / 0.3)" }}
@@ -75,11 +76,9 @@ const BooksSection = () => {
                 </div>
                 <span className="font-mono text-[0.7rem] cyber-glow uppercase tracking-[0.15em] mt-4 relative z-[1]">{book.coverTitle}</span>
               </div>
-
               <h3 className="text-[1.3rem] font-bold leading-tight mb-3 text-foreground">{book.title}</h3>
               <p className="text-sm cyber-glow opacity-90 mb-4">{book.subtitle}</p>
               <p className="text-sm text-fg-muted leading-relaxed">{book.description}</p>
-
               <div className="flex items-center gap-4 mt-6 pt-6" style={{ borderTop: "1px solid hsl(var(--cyber-cyan) / 0.15)" }}>
                 {book.tags.map((tag) => (
                   <span
