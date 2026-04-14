@@ -118,6 +118,26 @@ const translations: Record<Lang, Record<string, string>> = {
     "books.2.tag1": "China",
     "books.2.tag2": "Occidente",
 
+    // Papers
+    "nav.papers": "Papers",
+    "papers.section": "05.1 // PAPERS",
+    "papers.title": "Publicaciones Académicas",
+    "papers.1.title": "Sistemas de Manufactura Circular con IA: Guía de Desensamblaje por Visión, Trazabilidad Eco-QR y Soporte de Decisión Inteligente",
+    "papers.1.s1.heading": "1. Introducción",
+    "papers.1.s1.content": "La creciente demanda de sistemas industriales sostenibles impulsa la transición de modelos de producción lineales hacia paradigmas de manufactura circular. Esta investigación propone un marco integrado que combina inteligencia artificial (IA), visión por computadora, diseño para desensamblaje y sistemas de trazabilidad digital para apoyar la toma de decisiones inteligentes en sistemas híbridos de manufactura–remanufactura.",
+    "papers.1.s2.heading": "2. Problema de Investigación",
+    "papers.1.s2.content": "Los sistemas actuales carecen de guía adaptativa de desensamblaje, evaluación en tiempo real de la condición del producto y marcos de decisión integrados. Esta investigación aborda estas brechas mediante herramientas habilitadas por IA que conectan diseño, desensamblaje y toma de decisiones.",
+    "papers.1.s3.heading": "3. Objetivos de Investigación",
+    "papers.1.s3.content": "El objetivo es desarrollar un marco impulsado por IA que apoye decisiones de enrutamiento, elecciones de reparación vs. remanufactura, identificación de materiales y trazabilidad del ciclo de vida utilizando sistemas Eco-QR y aplicaciones basadas en visión.",
+    "papers.1.s4.heading": "4. Metodología",
+    "papers.1.s4.content": "La metodología integra visión por computadora, aprendizaje automático, modelos de optimización, principios de diseño para desensamblaje y sistemas de trazabilidad digital. Una base de datos estructurada de material-proceso apoyará la toma de decisiones y aplicaciones industriales.",
+    "papers.1.s5.heading": "5. Contribuciones Esperadas",
+    "papers.1.s5.content": "Los resultados esperados incluyen un sistema de desensamblaje basado en visión, un marco de trazabilidad Eco-QR, modelos de soporte de decisión con IA y una base de datos de inteligencia material-proceso.",
+    "papers.1.s6.heading": "6. Impacto",
+    "papers.1.s6.content": "Esta investigación contribuye a reducir los residuos industriales, mejorar la eficiencia de remanufactura y habilitar sistemas de economía circular alineados con estándares de sostenibilidad.",
+    "papers.1.s7.heading": "7. Alineación",
+    "papers.1.s7.content": "La investigación se alinea con el enfoque de NTNU en manufactura sostenible, sistemas industriales y transformación digital.",
+
     // Education
     "edu.section": "06 // FORMACIÓN",
     "edu.title": "Educación & Idiomas",
@@ -297,6 +317,26 @@ const translations: Record<Lang, Record<string, string>> = {
     "books.2.desc": "A deep analysis of the lessons China's development model offers the West, from its long-term strategic planning approach to its integration of technology and tradition in building a modern superpower.",
     "books.2.tag1": "China",
     "books.2.tag2": "The West",
+
+    // Papers
+    "nav.papers": "Papers",
+    "papers.section": "05.1 // PAPERS",
+    "papers.title": "Academic Publications",
+    "papers.1.title": "AI-Enabled Circular Manufacturing Systems: Vision-Based Disassembly Guidance, Eco-QR Traceability, and Intelligent Decision Support",
+    "papers.1.s1.heading": "1. Introduction",
+    "papers.1.s1.content": "The increasing demand for sustainable industrial systems is driving the transition from linear production models toward circular manufacturing paradigms. This research proposes an integrated framework combining artificial intelligence (AI), computer vision, design for disassembly, and digital traceability systems to support intelligent decision-making in hybrid manufacturing–remanufacturing systems.",
+    "papers.1.s2.heading": "2. Research Problem",
+    "papers.1.s2.content": "Current systems lack adaptive disassembly guidance, real-time evaluation of product condition, and integrated decision frameworks. This research addresses these gaps through AI-enabled tools that connect design, disassembly, and decision-making.",
+    "papers.1.s3.heading": "3. Research Objectives",
+    "papers.1.s3.content": "The objective is to develop an AI-driven framework supporting routing decisions, repair vs remanufacturing choices, material identification, and lifecycle traceability using Eco-QR systems and vision-based applications.",
+    "papers.1.s4.heading": "4. Methodology",
+    "papers.1.s4.content": "The methodology integrates computer vision, machine learning, optimization models, design for disassembly principles, and digital traceability systems. A structured material-process database will support decision-making and industrial applications.",
+    "papers.1.s5.heading": "5. Expected Contributions",
+    "papers.1.s5.content": "Expected outputs include a vision-based disassembly system, Eco-QR traceability framework, AI decision-support models, and a material-process intelligence database.",
+    "papers.1.s6.heading": "6. Impact",
+    "papers.1.s6.content": "This research contributes to reducing industrial waste, improving remanufacturing efficiency, and enabling circular economy systems aligned with sustainability standards.",
+    "papers.1.s7.heading": "7. Alignment",
+    "papers.1.s7.content": "The research aligns with NTNU's focus on sustainable manufacturing, industrial systems, and digital transformation.",
 
     // Education
     "edu.section": "06 // EDUCATION",

@@ -16,6 +16,7 @@ const Navbar = ({ onOpenLeyesTech }: NavbarProps) => {
     { href: "#habilidades", label: t("nav.habilidades") },
     { href: "#websites", label: t("nav.websites") },
     { href: "#libros", label: t("nav.libros") },
+    { href: "#papers", label: t("nav.papers") },
     { href: "#formacion", label: t("nav.formacion") },
     { href: "#contacto", label: t("nav.contacto") },
   ];
