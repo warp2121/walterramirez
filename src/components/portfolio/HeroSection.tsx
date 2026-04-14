@@ -1,15 +1,17 @@
 import { useEffect, useRef } from "react";
 import profilePhoto from "@/assets/profile-photo.jpg";
-
-const stats = [
-  { number: "30+", label: "Años de Experiencia" },
-  { number: "8+", label: "Años Dirección" },
-  { number: "3", label: "Países" },
-  { number: "70+", label: "Proyectos" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const statsRef = useRef<HTMLDivElement>(null);
+
+  const stats = [
+    { number: "30+", label: t("hero.stat1") },
+    { number: "8+", label: t("hero.stat2") },
+    { number: "3", label: t("hero.stat3") },
+    { number: "70+", label: t("hero.stat4") },
+  ];
 
   useEffect(() => {
     if (!statsRef.current) return;
@@ -56,7 +58,7 @@ const HeroSection = () => {
                 className="w-2 h-2 rounded-full animate-pulse-dot"
                 style={{ background: "hsl(var(--cyber-cyan))", boxShadow: "0 0 10px hsl(var(--cyber-cyan))" }}
               />
-              Disponible para consultoría
+              {t("hero.available")}
             </div>
 
             <h1 className="mt-8 font-bold leading-[1.1] tracking-tight" style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)" }}>
@@ -64,7 +66,7 @@ const HeroSection = () => {
               <span className="cyber-glow" style={{ textShadow: "0 0 30px hsl(var(--cyber-cyan) / 0.5)" }}>Ramírez</span>
             </h1>
             <p className="mt-4 text-fg-muted font-light" style={{ fontSize: "clamp(1rem, 3vw, 1.5rem)" }}>
-              MBA - Ingeniero Industrial | Transferencia Tecnológica & Modernización con IA
+              {t("hero.subtitle")}
             </p>
           </div>
 
@@ -80,7 +82,7 @@ const HeroSection = () => {
                 style={{ borderColor: "hsl(var(--cyber-cyan))", boxShadow: "0 0 30px hsl(var(--cyber-cyan) / 0.5)" }}
               />
             </div>
-            <div className="font-mono text-[0.65rem] cyber-glow tracking-[0.2em]">// WR. MBA · ING. INDUSTRIAL</div>
+            <div className="font-mono text-[0.65rem] cyber-glow tracking-[0.2em]">{t("hero.tagline")}</div>
           </div>
         </div>
 
@@ -100,7 +102,7 @@ const HeroSection = () => {
       </div>
 
       <div className="absolute bottom-8 left-1/2 flex flex-col items-center gap-2 cyber-glow text-xs tracking-widest animate-bounce-scroll">
-        <span>SCROLL</span>
+        <span>{t("hero.scroll")}</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M12 5v14M19 12l-7 7-7-7" />
         </svg>

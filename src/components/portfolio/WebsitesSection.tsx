@@ -1,15 +1,17 @@
 import { useEffect, useRef } from "react";
 import { Globe, BarChart3, Cpu, FolderPlus, ArrowRight } from "lucide-react";
-
-const websites = [
-  { icon: Globe, title: "Ozonomach", url: "www.ozonomach.com", href: "https://www.ozonomach.com" },
-  { icon: BarChart3, title: "Rank Peru", url: "www.rankperu.com", href: "https://www.rankperu.com" },
-  { icon: Cpu, title: "Macro Number", url: "www.macronumber.com", href: "https://www.macronumber.com" },
-  { icon: FolderPlus, title: "Gestión Proyectos", url: "www.gestionproyectos.com", href: "https://www.gestionproyectos.com" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WebsitesSection = () => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
+
+  const websites = [
+    { icon: Globe, title: "Ozonomach", url: "www.ozonomach.com", href: "https://www.ozonomach.com" },
+    { icon: BarChart3, title: "Rank Peru", url: "www.rankperu.com", href: "https://www.rankperu.com" },
+    { icon: Cpu, title: "Macro Number", url: "www.macronumber.com", href: "https://www.macronumber.com" },
+    { icon: FolderPlus, title: t("web.gestion"), url: "www.gestionproyectos.com", href: "https://www.gestionproyectos.com" },
+  ];
 
   useEffect(() => {
     if (!ref.current) return;
@@ -35,9 +37,9 @@ const WebsitesSection = () => {
     <section id="websites" className="py-24 px-8 relative z-[1] bg-bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
-          <div className="section-number mb-2">04 // WEB PROPERTIES</div>
+          <div className="section-number mb-2">{t("web.section")}</div>
           <h2 className="text-foreground font-semibold tracking-tight" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>
-            Propietario de Sitios Web
+            {t("web.title")}
           </h2>
         </div>
 
@@ -52,14 +54,12 @@ const WebsitesSection = () => {
               style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
             >
               <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--cyber-cyan)), transparent)", opacity: 0.6 }} />
-              
               <div
                 className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 relative z-[1]"
                 style={{ background: "linear-gradient(135deg, hsl(var(--cyber-cyan)), hsl(168, 100%, 33%))", boxShadow: "0 0 25px hsl(var(--cyber-cyan) / 0.5)" }}
               >
                 <site.icon className="w-7 h-7 text-primary-foreground" />
               </div>
-
               <h3 className="font-semibold mb-2 cyber-glow text-xl tracking-wide relative z-[1]">{site.title}</h3>
               <div className="font-mono text-sm text-foreground opacity-90 flex items-center gap-2 relative z-[1]">
                 {site.url}
