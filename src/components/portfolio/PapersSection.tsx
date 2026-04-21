@@ -24,6 +24,19 @@ const papers: Paper[] = [
     ],
     tags: ["AI", "Circular Economy", "Remanufacturing"],
   },
+  {
+    id: "ecolifetwin",
+    titleKey: "papers.2.title",
+    sections: [
+      { headingKey: "papers.2.s1.heading", contentKey: "papers.2.s1.content" },
+      { headingKey: "papers.2.s2.heading", contentKey: "papers.2.s2.content" },
+      { headingKey: "papers.2.s3.heading", contentKey: "papers.2.s3.content" },
+      { headingKey: "papers.2.s4.heading", contentKey: "papers.2.s4.content" },
+      { headingKey: "papers.2.s5.heading", contentKey: "papers.2.s5.content" },
+      { headingKey: "papers.2.s6.heading", contentKey: "papers.2.s6.content" },
+    ],
+    tags: ["Digital Twin", "Industry 5.0", "Reinforcement Learning"],
+  },
 ];
 
 const PapersSection = () => {
