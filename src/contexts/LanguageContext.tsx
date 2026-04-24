@@ -320,7 +320,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "books.section": "05 // PUBLICATIONS",
     "books.title": "Book Projects",
     "books.1.cover": "Artificial Intelligence",
-    "books.1.title": "AI: The Key to a Delayed Development",
+    "books.1.title": "AI Eclecticism: The Key to a Delayed Development",
     "books.1.subtitle": "A Transformative Vision for Latin America",
     "books.1.desc": "Explores how artificial intelligence can be the catalyst Latin America needs to close historical development gaps, modernize its productive structures, and compete in the 21st-century global economy.",
     "books.1.tag1": "Artificial Intelligence",
