@@ -107,7 +107,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "books.section": "05 // PUBLICACIONES",
     "books.title": "Proyectos de Libros",
     "books.1.cover": "Inteligencia Artificial",
-    "books.1.title": "IA: la llave de un desarrollo postergado",
+    "books.1.title": "Electicismo IA: la llave de un desarrollo postergado",
     "books.1.subtitle": "Una visión transformadora para América Latina",
     "books.1.desc": "Explora cómo la inteligencia artificial puede ser el catalizador que América Latina necesita para cerrar brechas históricas de desarrollo, modernizar sus estructuras productivas y competir en la economía global del siglo XXI.",
     "books.1.tag1": "Inteligencia Artificial",
