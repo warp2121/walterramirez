@@ -97,7 +97,7 @@ const ContactSection = () => {
                   { title: "Gestión Proyectos", url: "www.gestionproyectos.com" },
                 ];
                 const books = [
-                  { title: "IA: la llave de un desarrollo postergado", subtitle: "Una visión transformadora para América Latina", description: "Explora cómo la inteligencia artificial puede ser el catalizador que América Latina necesita para cerrar brechas históricas de desarrollo, modernizar sus estructuras productivas y competir en la economía global del siglo XXI." },
+                  { title: "Electicismo IA: la llave de un desarrollo postergado", subtitle: "Una visión transformadora para América Latina", description: "Explora cómo la inteligencia artificial puede ser el catalizador que América Latina necesita para cerrar brechas históricas de desarrollo, modernizar sus estructuras productivas y competir en la economía global del siglo XXI." },
                   { title: "China, el universo que está enseñando a Occidente", subtitle: "Lecciones de una civilización milenaria", description: "Un análisis profundo sobre las lecciones que el modelo de desarrollo chino ofrece a Occidente, desde su enfoque en la planificación estratégica de largo plazo hasta su integración de tecnología y tradición en la construcción de una superpotencia moderna." },
                 ];
                 const children: InstanceType<typeof Paragraph>[] = [];
