@@ -37,6 +37,19 @@ const papers: Paper[] = [
     ],
     tags: ["Digital Twin", "Industry 5.0", "Reinforcement Learning"],
   },
+  {
+    id: "ecolifetwin-framework",
+    titleKey: "papers.3.title",
+    sections: [
+      { headingKey: "papers.3.s1.heading", contentKey: "papers.3.s1.content" },
+      { headingKey: "papers.3.s2.heading", contentKey: "papers.3.s2.content" },
+      { headingKey: "papers.3.s3.heading", contentKey: "papers.3.s3.content" },
+      { headingKey: "papers.3.s4.heading", contentKey: "papers.3.s4.content" },
+      { headingKey: "papers.3.s5.heading", contentKey: "papers.3.s5.content" },
+      { headingKey: "papers.3.s6.heading", contentKey: "papers.3.s6.content" },
+    ],
+    tags: ["Industry 5.0", "BIM-Health", "Biocomputational AI", "Circular Manufacturing"],
+  },
 ];
 
 const PapersSection = () => {
