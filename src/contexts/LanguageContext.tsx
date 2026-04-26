@@ -152,6 +152,20 @@ const translations: Record<Lang, Record<string, string>> = {
     "papers.2.s6.heading": "6. Trabajos Relacionados",
     "papers.2.s6.content": "Este proyecto se basa en: Jeong et al. (2020) – Diseño de Gemelos Digitales para Apoyar la Toma de Decisiones en Logística de Producción; y Klein et al. (2026) – Hacia la Logística de Producción Auto-Organizada en Fábricas Circulares.",
 
+    "papers.3.title": "El Marco Eco-Life Twin: Sincronizando Inteligencia Biocomputacional Impulsada por IA, Manufactura Circular y Entornos Construidos Resilientes",
+    "papers.3.s1.heading": "1. Resumen",
+    "papers.3.s1.content": "Los paradigmas industriales actuales tratan la manufactura, la salud pública y la infraestructura urbana como sistemas aislados. Este artículo propone el Marco Eco-Life Twin, un modelo socio-técnico holístico que aprovecha la Inteligencia Artificial para sincronizar estos sectores. Al integrar el análisis biocomputacional de ADN con la manufactura circular y la infraestructura BIM 'saludable', es posible transitar de modelos industriales reactivos a ecosistemas proactivos centrados en la vida.",
+    "papers.3.s2.heading": "2. Convergencia Bio-Industrial: Salud Preventiva",
+    "papers.3.s2.content": "El núcleo del modelo Eco-Life Twin es el cambio del tratamiento a la prevención acelerada. Agentes de pronóstico genómico interpretan mapas individuales de ADN para identificar predisposiciones y formular planes de vida personalizados. Estos planes se conectan al entorno construido mediante analizadores en tiempo real de aire, agua y alimentos, creando un sistema 'Life-Guard' que previene accidentes y enfermedades ajustando el entorno inmediato del usuario.",
+    "papers.3.s3.heading": "3. Manufactura Circular Avanzada y Trazabilidad",
+    "papers.3.s3.content": "Cada producto manufacturado lleva un ID digital (Blockchain o vinculado a Twin) que permite el desensamblaje automatizado y el tratamiento post-vida de alta eficiencia. El marco prioriza sustratos biodegradables como cáscara de arroz, bambú y bioplásticos (PLA, PHA). Se propone la integración de sistemas de Ozono (O3) como método de desinfección primaria, aprovechando su propiedad de revertir a Oxígeno puro (O2).",
+    "papers.3.s4.heading": "4. El Entorno Construido como Componente de Salud (BIM-Health)",
+    "papers.3.s4.content": "Proponemos un estándar 'Healthy BIM' donde los diseños de edificios se optimizan no solo por costo, sino por el bienestar biológico de sus habitantes. Esto incluye ventilación automatizada impulsada por IA basada en datos de salud del ocupante en tiempo real y el uso de materiales carbono-neutrales. El marco integra hubs de energía limpia descentralizada para flotas de vehículos recargables, tratando la movilidad urbana como un sistema circulante de almacenamiento de energía.",
+    "papers.3.s5.heading": "5. Planificación de Escenarios: Nuevos Sectores Económicos",
+    "papers.3.s5.content": "La implementación catalizará sectores sin precedentes: (1) Arquitectos de Robots Personalizados que diseñan cobots adaptados a las necesidades de movilidad y salud de personas mayores o pacientes en recuperación; (2) Analistas Biocomputacionales que gestionan la interfaz entre datos genómicos y ajustes ambientales; (3) Gestores de Ciclo de Vida Circular dedicados al servicio post-compra y reciclaje de alta tecnología de productos con ID-trazable.",
+    "papers.3.s6.heading": "6. Conclusión",
+    "papers.3.s6.content": "El Marco Eco-Life Twin representa un salto hacia la Industria 5.0, donde la tecnología sirve a la vida biológica. Al aplicar planificación de escenarios a estas transiciones convergentes, podemos asegurar que el entorno construido de la próxima década sea no solo más inteligente, sino inherentemente más saludable y circular.",
+
     // Education
     "edu.section": "06 // FORMACIÓN",
     "edu.title": "Educación & Idiomas",
@@ -364,6 +378,20 @@ const translations: Record<Lang, Record<string, string>> = {
     "papers.2.s5.content": "In active development – Public release planned for May 2026. Code available at github.com/warp2121/EcoLifeTwin and live cyberpunk demo at eco-life-twin.vercel.app.",
     "papers.2.s6.heading": "6. Related Work",
     "papers.2.s6.content": "This project builds upon: Jeong et al. (2020) – A Design of Digital Twins for Supporting Decision-Making in Production Logistics; and Klein et al. (2026) – Toward Self-Organizing Production Logistics in Circular Factories.",
+
+    "papers.3.title": "The Eco-Life Twin Framework: Synchronizing AI-Driven Biocomputational Intelligence, Circular Manufacturing, and Resilient Built Environments",
+    "papers.3.s1.heading": "1. Abstract",
+    "papers.3.s1.content": "Current industrial paradigms often treat manufacturing, public health, and urban infrastructure as siloed systems. This paper proposes the Eco-Life Twin Framework, a holistic socio-technical model that leverages Artificial Intelligence to synchronize these sectors. By integrating biocomputational DNA analysis with circular manufacturing and 'healthy' BIM infrastructure, we can transition from reactive industrial models to proactive, life-centric ecosystems.",
+    "papers.3.s2.heading": "2. Bio-Industrial Convergence: Preventive Healthcare",
+    "papers.3.s2.content": "The core of the Eco-Life Twin model is the shift from treatment to accelerated prevention. Genomic Forecasting Agents interpret individual DNA maps to identify genetic predispositions and formulate personalized life-plans. These plans connect to the built environment via real-time analyzers for air, water, and food quality, creating a 'Life-Guard' system that prevents accidents and disease by adjusting the user's immediate surroundings.",
+    "papers.3.s3.heading": "3. Advanced Circular Manufacturing & Traceability",
+    "papers.3.s3.content": "Every manufactured product carries a digital ID (Blockchain or Twin-linked) enabling automated disassembly and high-efficiency post-life treatment. The framework prioritizes biodegradable substrates such as Rice Husk, Bamboo, and Bioplastics (PLA, PHA). Ozone (O3) systems are proposed as a primary sanitization method, capitalizing on its property of reverting to pure Oxygen (O2), enhancing indoor air quality while maintaining sterile environments.",
+    "papers.3.s4.heading": "4. The Built Environment as a Health Component (BIM-Health)",
+    "papers.3.s4.content": "We propose a 'Healthy BIM' standard where building designs are optimized not just for cost, but for the biological well-being of inhabitants. This includes AI-driven ventilation based on real-time occupant health data and carbon-neutral materials. The framework integrates decentralized clean energy hubs for rechargeable vehicle fleets, treating urban mobility as a circulating energy-storage system.",
+    "papers.3.s5.heading": "5. Scenario Planning: New Economic Sectors",
+    "papers.3.s5.content": "Implementation will catalyze unprecedented sectors: (1) Personalized Robot Architects designing cobots tailored to mobility and health needs of the elderly or recovering patients; (2) Biocomputational Analysts managing the interface between genomic data and environmental adjustments; (3) Circular Life-Cycle Managers dedicated to post-purchase service and high-tech recycling of ID-Traceable products.",
+    "papers.3.s6.heading": "6. Conclusion",
+    "papers.3.s6.content": "The Eco-Life Twin Framework represents a leap toward Industry 5.0, where technology serves biological life. By applying scenario planning to these converging transitions, we can ensure that the Built Environment of the next decade is not only smarter but inherently healthier and more circular.",
 
     // Education
     "edu.section": "06 // EDUCATION",
