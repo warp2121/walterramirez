@@ -1,12 +1,152 @@
 import { useEffect, useRef } from "react";
-import { Mail, Phone, Linkedin, Download } from "lucide-react";
+import { Mail, Phone, Linkedin, Download, FileDown } from "lucide-react";
 import { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel } from "docx";
 import { saveAs } from "file-saver";
+import jsPDF from "jspdf";
+import profilePhoto from "@/assets/profile-photo.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
+
+  const handleDownloadPDF = async () => {
+    const doc = new jsPDF({ unit: "pt", format: "a4" });
+    const pageW = doc.internal.pageSize.getWidth();
+    const pageH = doc.internal.pageSize.getHeight();
+    const margin = 48;
+    let y = margin;
+
+    const ensureSpace = (needed: number) => {
+      if (y + needed > pageH - margin) {
+        doc.addPage();
+        y = margin;
+      }
+    };
+
+    const addHeading = (text: string, size = 14) => {
+      ensureSpace(size + 14);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(size);
+      doc.setTextColor(0, 180, 200);
+      doc.text(text, margin, y);
+      y += 6;
+      doc.setDrawColor(0, 180, 200);
+      doc.line(margin, y, pageW - margin, y);
+      y += 14;
+      doc.setTextColor(30, 30, 30);
+    };
+
+    const addParagraph = (text: string, opts: { bold?: boolean; size?: number; indent?: number } = {}) => {
+      const size = opts.size ?? 10;
+      doc.setFont("helvetica", opts.bold ? "bold" : "normal");
+      doc.setFontSize(size);
+      doc.setTextColor(30, 30, 30);
+      const x = margin + (opts.indent ?? 0);
+      const lines = doc.splitTextToSize(text, pageW - margin * 2 - (opts.indent ?? 0));
+      lines.forEach((line: string) => {
+        ensureSpace(size + 4);
+        doc.text(line, x, y);
+        y += size + 3;
+      });
+    };
+
+    // Header with photo
+    try {
+      const img = await fetch(profilePhoto).then(r => r.blob());
+      const dataUrl: string = await new Promise((res) => {
+        const reader = new FileReader();
+        reader.onloadend = () => res(reader.result as string);
+        reader.readAsDataURL(img);
+      });
+      doc.addImage(dataUrl, "JPEG", margin, y, 90, 90);
+    } catch { /* ignore */ }
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.setTextColor(0, 180, 200);
+    doc.text("WALTER RAMÍREZ", margin + 105, y + 28);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(11);
+    doc.setTextColor(80, 80, 80);
+    doc.text("MBA — Ingeniero Industrial", margin + 105, y + 48);
+    doc.setFontSize(9);
+    doc.text("Transferencia Tecnológica & Modernización Productiva con IA", margin + 105, y + 64);
+    doc.text("Lima, Perú | ramirezw2010@gmail.com | +51 958 188 762", margin + 105, y + 80);
+    y += 110;
+
+    addHeading("PERFIL PROFESIONAL");
+    addParagraph("Ingeniero Industrial con más de 30 años de experiencia en dirección técnica, gestión industrial, control de calidad y ejecución de proyectos de infraestructura y manufactura, incluyendo contratos gubernamentales internacionales.");
+    addParagraph("Parte del equipo de proyectos de energía e industria, evaluación técnica de contratos públicos, gestión ISO 9000, como CAD manager y también jefe de producción de planta industrial, innovación productiva para MYPES e implementación de inteligencia artificial en procesos administrativos.");
+
+    addHeading("EXPERIENCIA PROFESIONAL");
+    const experiences = [
+      { period: "2020 — 2025", title: "CEO – Ozonomach", company: "Lima, Perú | Dirección Ejecutiva", functions: ["Dirección estratégica empresarial", "Gestión de innovación y desarrollo de producto", "Implementación de automatización con IA", "Gestión de compras internacionales"] },
+      { period: "2018 — 2019", title: "Docente en Escuelas en China", company: "Younuvo Jilin Educational Experts – Changchun, China", functions: ["Profesor de inglés y cultura occidental, ~1,000 alumnos durante 1 año"] },
+      { period: "2017 — 2018", title: "Consultor de Ingeniería", company: "Freelance, Nueva York, EE. UU.", functions: ["Planos de ingeniería para fabricación en EE.UU. y China", "Adquisiciones globales"] },
+      { period: "2014 — 2018", title: "Asistente de Ingeniería / Programador CNC", company: "Millwork NARVA – Springfield, NJ, EE. UU.", functions: ["Diseño 3D y postprocesamiento G-code (Biese Rover, Holzher Linx)", "Desarrollo de paneles 3D y esculturas con Aspire", "Dibujo de gabinetes en SolidWorks y AutoCAD"] },
+      { period: "2012 — 2014", title: "Jefe de Planta", company: "MAJESTIC Industry – NJ, USA", functions: ["Dirección de planta industrial", "Layout y control de calidad"] },
+      { period: "2011 — 2012", title: "Project Manager – Contratos Gobierno", company: "Mechanical Factory O-AVIATION, NJ, USA", functions: ["Cumplimiento contractual", "Estándares ISO y militares"] },
+      { period: "1999 — 2009", title: "Jefe CAD / ISO 9000 Auditor", company: "LAHMEYER WATER & ENERGY, Lima, Perú", functions: ["Proyectos hidroenergéticos", "Gestión documental técnica e ISO"] },
+    ];
+    experiences.forEach(exp => {
+      addParagraph(`${exp.title}  (${exp.period})`, { bold: true, size: 11 });
+      addParagraph(exp.company, { size: 9 });
+      exp.functions.forEach(fn => addParagraph(`• ${fn}`, { indent: 14 }));
+      y += 4;
+    });
+
+    addHeading("HABILIDADES TÉCNICAS");
+    const skills = [
+      ["Inteligencia Artificial", "ChatGPT, Copilot, Gemini, Claude, Lovable, Prompt Builder, NoteBookLM, Flux, Make, Kimi, Antigravity, Github, Grok, Cowork, Prompt Design"],
+      ["Diseño & CAD", "AutoCAD Expert, SolidWorks, Wix, UX Design"],
+      ["Gestión Industrial", "U2 Software ERP, ISO 9000, CNC Software, Vectric"],
+      ["Comercio Internacional", "MFG.COM, Alibaba, Procurement, Logistics"],
+      ["Competencias Directivas", "Articulación Universidad-Empresa, Innovación Productiva, Evaluación de Contratos, Modernización con IA"],
+      ["Software & Tools", "MS Office, CNC Center, GPT for Coding"],
+    ];
+    skills.forEach(([t, v]) => {
+      addParagraph(t, { bold: true });
+      addParagraph(v, { indent: 14, size: 9 });
+    });
+
+    addHeading("SITIOS WEB PROPIOS");
+    ["Ozonomach — www.ozonomach.com", "Rank Peru — www.rankperu.com", "Macro Number — www.macronumber.com", "Gestión Proyectos — www.gestionproyectos.com"]
+      .forEach(s => addParagraph(`• ${s}`, { indent: 14 }));
+
+    addHeading("PROYECTOS DE LIBROS");
+    [
+      { t: "Electicismo IA: la llave de un desarrollo postergado", d: "Cómo la IA puede ser el catalizador del desarrollo en América Latina." },
+      { t: "China, el universo que está enseñando a Occidente", d: "Lecciones del modelo de desarrollo chino para Occidente." },
+    ].forEach(b => {
+      addParagraph(b.t, { bold: true });
+      addParagraph(b.d, { indent: 14, size: 9 });
+    });
+
+    addHeading("PAPERS ACADÉMICOS");
+    [
+      "Reingeniería del Estado Peruano con IA Generativa",
+      "Marco Eclecticista de IA para América Latina",
+      "The Eco-Life Twin Framework: AI-Driven Biocomputational Intelligence",
+    ].forEach(p => addParagraph(`• ${p}`, { indent: 14 }));
+
+    addHeading("EDUCACIÓN");
+    addParagraph("MBA — Webber International University, Florida, USA", { bold: true });
+    addParagraph("Ingeniero Industrial — Universidad Inca Garcilaso de la Vega, Perú", { bold: true });
+
+    addHeading("IDIOMAS");
+    ["Español — Nativo", "English — Avanzado", "Chinese — En progreso", "German — En progreso"]
+      .forEach(l => addParagraph(`• ${l}`, { indent: 14 }));
+
+    addHeading("CONTACTO");
+    addParagraph("• Email: ramirezw2010@gmail.com", { indent: 14 });
+    addParagraph("• Teléfono: +51 958 188 762", { indent: 14 });
+    addParagraph("• LinkedIn: linkedin.com/in/walter-ramirez", { indent: 14 });
+
+    doc.save("Walter-Ramirez-Portfolio.pdf");
+  };
+
+
 
   useEffect(() => {
     if (!ref.current) return;
@@ -161,8 +301,21 @@ const ContactSection = () => {
               style={{ borderColor: "hsl(var(--cyber-pink))", color: "hsl(var(--cyber-pink))" }}
             >
               <Download className="w-5 h-5" /> {t("contact.cv")}
+              <Download className="w-5 h-5" /> {t("contact.cv")}
+            </button>
+            <button
+              onClick={handleDownloadPDF}
+              className="inline-flex items-center gap-2 px-6 py-3.5 font-semibold rounded-lg transition-all hover:-translate-y-0.5 cursor-pointer"
+              style={{
+                background: "linear-gradient(135deg, hsl(var(--cyber-cyan)), hsl(168, 100%, 33%))",
+                color: "hsl(var(--background))",
+                boxShadow: "0 0 20px hsl(var(--cyber-cyan) / 0.4)",
+              }}
+            >
+              <FileDown className="w-5 h-5" /> {t("contact.pdf")}
             </button>
           </div>
+
 
           <div className="mt-8 pt-8 border-t border-border">
             <p className="font-mono text-sm cyber-glow">{t("contact.footer")}</p>

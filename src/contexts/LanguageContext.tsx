@@ -189,6 +189,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "contact.title": "Construyamos el futuro juntos",
     "contact.desc": "Especializado en transferencia tecnológica, modernización productiva con IA y gestión de proyectos internacionales.",
     "contact.cv": "Descargar CV",
+    "contact.pdf": "BAJAR ARCHIVO PDF",
     "contact.footer": "Lima, Perú — Disponible para proyectos remotos e internacionales",
 
     // Footer
@@ -414,8 +415,8 @@ const translations: Record<Lang, Record<string, string>> = {
     // Contact
     "contact.section": "07 // CONTACT",
     "contact.title": "Let's build the future together",
-    "contact.desc": "Specialized in technology transfer, AI-driven productive modernization, and international project management.",
     "contact.cv": "Download CV",
+    "contact.pdf": "DOWNLOAD PDF FILE",
     "contact.footer": "Lima, Peru — Available for remote and international projects",
 
     // Footer
