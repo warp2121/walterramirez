@@ -301,8 +301,21 @@ const ContactSection = () => {
               style={{ borderColor: "hsl(var(--cyber-pink))", color: "hsl(var(--cyber-pink))" }}
             >
               <Download className="w-5 h-5" /> {t("contact.cv")}
+              <Download className="w-5 h-5" /> {t("contact.cv")}
+            </button>
+            <button
+              onClick={handleDownloadPDF}
+              className="inline-flex items-center gap-2 px-6 py-3.5 font-semibold rounded-lg transition-all hover:-translate-y-0.5 cursor-pointer"
+              style={{
+                background: "linear-gradient(135deg, hsl(var(--cyber-cyan)), hsl(168, 100%, 33%))",
+                color: "hsl(var(--background))",
+                boxShadow: "0 0 20px hsl(var(--cyber-cyan) / 0.4)",
+              }}
+            >
+              <FileDown className="w-5 h-5" /> {t("contact.pdf")}
             </button>
           </div>
+
 
           <div className="mt-8 pt-8 border-t border-border">
             <p className="font-mono text-sm cyber-glow">{t("contact.footer")}</p>
