@@ -189,6 +189,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "contact.title": "Construyamos el futuro juntos",
     "contact.desc": "Especializado en transferencia tecnológica, modernización productiva con IA y gestión de proyectos internacionales.",
     "contact.cv": "Descargar CV",
+    "contact.pdf": "BAJAR ARCHIVO PDF",
     "contact.footer": "Lima, Perú — Disponible para proyectos remotos e internacionales",
 
     // Footer
